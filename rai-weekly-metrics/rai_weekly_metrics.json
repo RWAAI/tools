@@ -1,0 +1,206 @@
+{
+    "updated_at": "2026-06-13T17:10:00",
+    "config": {
+        "as_of_timezone": "Asia/Singapore",
+        "withholding_tax_rate": 0.3,
+        "product_management_fee_annual": 0.02,
+        "products": [
+            {
+                "name": "rAI",
+                "display_name": "rAI",
+                "target_period": "ttm",
+                "holdings": {
+                    "QQQI": 0.75,
+                    "NVDY": 0.25
+                }
+            },
+            {
+                "name": "rAI Max",
+                "display_name": "rAI Max",
+                "target_period": "ttm_or_common_available",
+                "holdings": {
+                    "NVDY": 0.3,
+                    "QQQI": 0.2,
+                    "DRAM": 0.2,
+                    "VGT": 0.2,
+                    "SGOV": 0.1
+                }
+            }
+        ],
+        "funds": {
+            "NVDY": {
+                "issuer": "YieldMax",
+                "distribution_frequency": "Weekly",
+                "official_distribution_url": "https://www.yieldmaxetfs.com/our-etfs/nvdy/",
+                "price_source": "Yahoo Finance"
+            },
+            "QQQI": {
+                "issuer": "NEOS",
+                "distribution_frequency": "Monthly",
+                "official_distribution_url": "https://neosfunds.com/qqqi/",
+                "price_source": "Yahoo Finance"
+            },
+            "DRAM": {
+                "issuer": "Roundhill",
+                "distribution_frequency": "Annual",
+                "official_distribution_url": "https://www.roundhillinvestments.com/etf/dram/",
+                "price_source": "Yahoo Finance"
+            },
+            "VGT": {
+                "issuer": "Vanguard",
+                "distribution_frequency": "Quarterly",
+                "official_distribution_url": "https://investor.vanguard.com/investment-products/etfs/profile/vgt",
+                "price_source": "Yahoo Finance",
+                "distribution_fallback_source": "Yahoo Finance, used only if Vanguard page/API has no parseable distribution history"
+            },
+            "SGOV": {
+                "issuer": "iShares",
+                "distribution_frequency": "Monthly",
+                "official_distribution_url": "https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf",
+                "price_source": "Yahoo Finance"
+            }
+        }
+    },
+    "results": [
+        {
+            "name": "rAI",
+            "display_name": "rAI",
+            "period_start": "2025-06-12",
+            "period_end": "2026-06-12",
+            "period_label": "TTM",
+            "net_current_distribution_rate": 0.1446,
+            "net_distribution_rate": 0.16808249616227944,
+            "net_total_return": 0.17043776259372478,
+            "gross_weighted_current_distribution_rate": 0.23514285714285715,
+            "gross_weighted_ttm_distribution_rate": 0.26868928023182775,
+            "funds": {
+                "QQQI": {
+                    "weight": 0.75,
+                    "latest_close": 56.13999938964844,
+                    "latest_distribution_amount": 0.6589,
+                    "latest_distribution_ex_date": "2026-05-20",
+                    "current_distribution_amount": 0.6589,
+                    "current_distribution_sample_size": 1,
+                    "current_run_rate_distribution_rate": 0.14084075678593475,
+                    "ttm_distribution_sum": 7.598,
+                    "ttm_distribution_count": 12,
+                    "gross_ttm_distribution_rate": 0.1353402223477933,
+                    "taxed_total_return_before_product_fee": 0.20599500544968663,
+                    "source_status": [
+                        "official"
+                    ]
+                },
+                "NVDY": {
+                    "weight": 0.25,
+                    "latest_close": 12.899999618530273,
+                    "latest_distribution_amount": 0.1194,
+                    "latest_distribution_ex_date": "2026-06-11",
+                    "current_distribution_amount": 0.1277,
+                    "current_distribution_sample_size": 4,
+                    "current_run_rate_distribution_rate": 0.5180491582136244,
+                    "ttm_distribution_sum": 8.6267,
+                    "ttm_distribution_count": 40,
+                    "gross_ttm_distribution_rate": 0.6687364538839311,
+                    "taxed_total_return_before_product_fee": 0.15931197382940843,
+                    "source_status": [
+                        "official"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "rAI Max",
+            "display_name": "rAI Max",
+            "period_start": "2026-04-02",
+            "period_end": "2026-06-12",
+            "period_label": "common available since 2026-04-02",
+            "net_current_distribution_rate": 0.1114571163767437,
+            "net_distribution_rate": 0.14204365712259073,
+            "net_total_return": 0.37123574414199223,
+            "gross_weighted_current_distribution_rate": 0.1877958805382053,
+            "gross_weighted_ttm_distribution_rate": 0.23149093874655818,
+            "funds": {
+                "NVDY": {
+                    "weight": 0.3,
+                    "latest_close": 12.899999618530273,
+                    "latest_distribution_amount": 0.1194,
+                    "latest_distribution_ex_date": "2026-06-11",
+                    "current_distribution_amount": 0.1277,
+                    "current_distribution_sample_size": 4,
+                    "current_run_rate_distribution_rate": 0.5180491582136244,
+                    "ttm_distribution_sum": 8.6267,
+                    "ttm_distribution_count": 40,
+                    "gross_ttm_distribution_rate": 0.6687364538839311,
+                    "taxed_total_return_before_product_fee": 0.06192765749749585,
+                    "source_status": [
+                        "official"
+                    ]
+                },
+                "QQQI": {
+                    "weight": 0.2,
+                    "latest_close": 56.13999938964844,
+                    "latest_distribution_amount": 0.6589,
+                    "latest_distribution_ex_date": "2026-05-20",
+                    "current_distribution_amount": 0.6589,
+                    "current_distribution_sample_size": 1,
+                    "current_run_rate_distribution_rate": 0.14084075678593475,
+                    "ttm_distribution_sum": 7.598,
+                    "ttm_distribution_count": 12,
+                    "gross_ttm_distribution_rate": 0.1353402223477933,
+                    "taxed_total_return_before_product_fee": 0.13545151129703115,
+                    "source_status": [
+                        "official"
+                    ]
+                },
+                "DRAM": {
+                    "weight": 0.2,
+                    "latest_close": 65.01000213623047,
+                    "latest_distribution_amount": 0.0,
+                    "latest_distribution_ex_date": "",
+                    "current_distribution_amount": 0.0,
+                    "current_distribution_sample_size": 0,
+                    "current_run_rate_distribution_rate": 0.0,
+                    "ttm_distribution_sum": 0,
+                    "ttm_distribution_count": 0,
+                    "gross_ttm_distribution_rate": 0.0,
+                    "taxed_total_return_before_product_fee": 1.341858847270227,
+                    "source_status": [
+                        "official_no_distributions"
+                    ]
+                },
+                "VGT": {
+                    "weight": 0.2,
+                    "latest_close": 116.73999786376953,
+                    "latest_distribution_amount": 0.093,
+                    "latest_distribution_ex_date": "2026-03-24",
+                    "current_distribution_amount": 0.093,
+                    "current_distribution_sample_size": 1,
+                    "current_run_rate_distribution_rate": 0.0031865685010043234,
+                    "ttm_distribution_sum": 0.38287499999999997,
+                    "ttm_distribution_count": 4,
+                    "gross_ttm_distribution_rate": 0.0032797242333925543,
+                    "taxed_total_return_before_product_fee": 0.3104889509798592,
+                    "source_status": [
+                        "fallback_yahoo_after_official_error: No parseable Vanguard distribution table found on current profile page"
+                    ]
+                },
+                "SGOV": {
+                    "weight": 0.1,
+                    "latest_close": 100.51000213623047,
+                    "latest_distribution_amount": 0.299492,
+                    "latest_distribution_ex_date": "2026-06-01",
+                    "current_distribution_amount": 0.299492,
+                    "current_distribution_sample_size": 1,
+                    "current_run_rate_distribution_rate": 0.035756680167301665,
+                    "ttm_distribution_sum": 3.162058,
+                    "ttm_distribution_count": 10,
+                    "gross_ttm_distribution_rate": 0.03146013265141683,
+                    "taxed_total_return_before_product_fee": 0.004969267179351755,
+                    "source_status": [
+                        "official"
+                    ]
+                }
+            }
+        }
+    ]
+}
