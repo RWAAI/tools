@@ -206,6 +206,7 @@
 
   <script>
     const pct = v => `${(Number(v || 0) * 100).toFixed(1)}%`;
+    const pct2 = v => `${(Number(v || 0) * 100).toFixed(2)}%`;
     const usd = v => `$${Number(v || 0).toFixed(4)}`;
     const statusPill = s => `<span class="pill ${String(s).startsWith('official') ? '' : 'warn'}">${s}</span>`;
 
@@ -236,7 +237,7 @@
           <div class="metrics">
             <div class="metric">
               <label>当前净分红率</label>
-              <strong>${pct(r.net_current_distribution_rate)}</strong>
+              <strong>${pct2(r.net_current_distribution_rate)}</strong>
               <small>月派最新一次，周派近 4 周均值</small>
             </div>
             <div class="metric">
