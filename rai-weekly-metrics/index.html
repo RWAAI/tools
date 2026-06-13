@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>rAI Weekly Metrics</title>
+  <style>
+    :root{color-scheme:dark;--bg:#111214;--panel:#1a1c20;--panel2:#22252a;--text:#f4f5f7;--muted:#9ca3af;--line:rgba(255,255,255,.1);--accent:#ff8a2a;--green:#19c37d;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);line-height:1.5}.wrap{max-width:1080px;margin:0 auto;padding:28px 18px 44px}header{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:18px}h1{margin:0 0 6px;font-size:26px}.sub,.stamp,.note{color:var(--muted);font-size:13px}.actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.button{color:var(--text);text-decoration:none;border:1px solid var(--line);background:var(--panel);padding:8px 10px;border-radius:6px;font-size:13px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}.card,.section{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px}.card h2,.section h2{margin:0 0 12px;font-size:18px}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.metric{background:var(--panel2);border-radius:6px;padding:12px;min-height:92px}.metric label{display:block;color:var(--muted);font-size:12px;margin-bottom:8px}.metric strong{display:block;color:var(--accent);font-size:25px;line-height:1.1;font-variant-numeric:tabular-nums}.metric small{display:block;margin-top:7px;color:var(--muted);font-size:11px}table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-weight:600}.num{text-align:right;font-variant-numeric:tabular-nums}.pill{display:inline-flex;padding:2px 7px;border-radius:999px;background:rgba(25,195,125,.12);color:var(--green);font-size:11px}.pill.warn{background:rgba(255,138,42,.14);color:var(--accent)}.section{margin-top:16px}.sources a{color:#9db7ff;font-size:13px;margin-right:12px}@media(max-width:840px){header,.grid{display:block}.actions{justify-content:flex-start;margin-top:14px}.card{margin-top:14px}.metrics{grid-template-columns:1fr}.hide-sm{display:none}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>rAI Weekly Metrics</h1>
+      <div class="sub">官网实际分红数据 + 30% WHT + 2% 年化管理费</div>
+      <div class="stamp">Updated: 2026-06-13 16:35:42</div>
+    </div>
+    <div class="actions">
+      <a class="button" href="https://rwaai.github.io/tools/">Back to tools</a>
+    </div>
+  </header>
+
+  <div class="grid">
+    <article class="card">
+      <h2>rAI</h2>
+      <div class="metrics">
+        <div class="metric"><label>当前净分红率</label><strong>13.8%</strong><small>最新实际分配年化</small></div>
+        <div class="metric"><label>TTM 净分红率</label><strong>16.8%</strong><small>过去 12 个月实际分配</small></div>
+        <div class="metric"><label>TTM 净总回报</label><strong>17.0%</strong><small>2025-06-12 至 2026-06-12</small></div>
+      </div>
+      <table><tr><th>Period</th><td>TTM</td></tr><tr><th>Gross current distribution</th><td>22.6%</td></tr><tr><th>Gross TTM distribution</th><td>26.9%</td></tr></table>
+    </article>
+
+    <article class="card">
+      <h2>rAI Max</h2>
+      <div class="metrics">
+        <div class="metric"><label>当前净分红率</label><strong>10.4%</strong><small>最新实际分配年化</small></div>
+        <div class="metric"><label>TTM 净分红率</label><strong>14.2%</strong><small>过去 12 个月实际分配</small></div>
+        <div class="metric"><label>净总回报</label><strong>37.1%</strong><small>2026-04-02 至 2026-06-12</small></div>
+      </div>
+      <table><tr><th>Period</th><td>Common available since DRAM listing</td></tr><tr><th>Gross current distribution</th><td>17.7%</td></tr><tr><th>Gross TTM distribution</th><td>23.1%</td></tr></table>
+    </article>
+  </div>
+
+  <div class="section">
+    <h2>Fund Inputs</h2>
+    <div class="note">Current = 最新一次实际分配按频率年化；TTM = 过去 12 个月实际分配合计。</div>
+    <table>
+      <thead><tr><th>Product</th><th>Fund</th><th class="num">Weight</th><th class="num">Latest dist</th><th class="num">Current gross</th><th class="num hide-sm">TTM dist/share</th><th class="num">TTM gross</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>rAI</td><td>QQQI</td><td class="num">75%</td><td class="num">$0.6589<br><span class="note">2026-05-20</span></td><td class="num">14.1%</td><td class="num hide-sm">$7.5980</td><td class="num">13.5%</td><td><span class="pill">official</span></td></tr>
+        <tr><td>rAI</td><td>NVDY</td><td class="num">25%</td><td class="num">$0.1194<br><span class="note">2026-06-11</span></td><td class="num">48.1%</td><td class="num hide-sm">$8.6267</td><td class="num">66.9%</td><td><span class="pill">official</span></td></tr>
+        <tr><td>rAI Max</td><td>NVDY</td><td class="num">30%</td><td class="num">$0.1194</td><td class="num">48.1%</td><td class="num hide-sm">$8.6267</td><td class="num">66.9%</td><td><span class="pill">official</span></td></tr>
+        <tr><td>rAI Max</td><td>QQQI</td><td class="num">20%</td><td class="num">$0.6589</td><td class="num">14.1%</td><td class="num hide-sm">$7.5980</td><td class="num">13.5%</td><td><span class="pill">official</span></td></tr>
+        <tr><td>rAI Max</td><td>DRAM</td><td class="num">20%</td><td class="num">$0.0000</td><td class="num">0.0%</td><td class="num hide-sm">$0.0000</td><td class="num">0.0%</td><td><span class="pill">official_no_distributions</span></td></tr>
+        <tr><td>rAI Max</td><td>VGT</td><td class="num">20%</td><td class="num">$0.0930</td><td class="num">0.3%</td><td class="num hide-sm">$0.3829</td><td class="num">0.3%</td><td><span class="pill warn">Yahoo fallback</span></td></tr>
+        <tr><td>rAI Max</td><td>SGOV</td><td class="num">10%</td><td class="num">$0.2995</td><td class="num">3.6%</td><td class="num hide-sm">$3.1621</td><td class="num">3.1%</td><td><span class="pill">official</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Source Notes</h2>
+    <p class="note">NVDY, QQQI, DRAM, and SGOV distributions are parsed from issuer pages. DRAM currently has no distribution history. Vanguard's current VGT page did not expose a parseable distribution table, so VGT is marked as a Yahoo fallback until a stable official endpoint is added.</p>
+    <div class="sources">
+      <a href="https://www.yieldmaxetfs.com/our-etfs/nvdy/">NVDY official</a>
+      <a href="https://neosfunds.com/qqqi/">QQQI official</a>
+      <a href="https://www.roundhillinvestments.com/etf/dram/">DRAM official</a>
+      <a href="https://investor.vanguard.com/investment-products/etfs/profile/vgt">VGT official</a>
+      <a href="https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf">SGOV official</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
