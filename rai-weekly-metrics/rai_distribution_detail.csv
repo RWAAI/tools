@@ -1,0 +1,109 @@
+symbol,ex_date,amount_per_share,declaration_date,record_date,payable_date,roc,source_status,source
+VGT,2026-03-24,0.093000,,,,,fallback_yahoo_after_official_error: No parseable Vanguard distribution table found on current profile page,https://finance.yahoo.com/
+VGT,2025-12-17,0.094625,,,,,fallback_yahoo_after_official_error: No parseable Vanguard distribution table found on current profile page,https://finance.yahoo.com/
+VGT,2025-09-24,0.107375,,,,,fallback_yahoo_after_official_error: No parseable Vanguard distribution table found on current profile page,https://finance.yahoo.com/
+VGT,2025-06-26,0.087875,,,,,fallback_yahoo_after_official_error: No parseable Vanguard distribution table found on current profile page,https://finance.yahoo.com/
+VGT,2025-03-25,0.091125,,,,,fallback_yahoo_after_official_error: No parseable Vanguard distribution table found on current profile page,https://finance.yahoo.com/
+SGOV,2026-06-01,0.299492,,"Jun 01, 2026","Jun 04, 2026",,official,https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf
+SGOV,2026-05-01,0.297920,,"May 01, 2026","May 06, 2026",,official,https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf
+SGOV,2026-04-01,0.292689,,"Apr 01, 2026","Apr 07, 2026",,official,https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf
+SGOV,2026-03-02,0.272390,,"Mar 02, 2026","Mar 05, 2026",,official,https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf
+SGOV,2026-02-02,0.309236,,"Feb 02, 2026","Feb 05, 2026",,official,https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf
+SGOV,2025-12-19,0.323046,,"Dec 19, 2025","Dec 24, 2025",,official,https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf
+SGOV,2025-12-01,0.312906,,"Dec 01, 2025","Dec 04, 2025",,official,https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf
+SGOV,2025-11-03,0.347608,,"Nov 03, 2025","Nov 06, 2025",,official,https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf
+SGOV,2025-10-01,0.346643,,"Oct 01, 2025","Oct 06, 2025",,official,https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf
+SGOV,2025-09-02,0.360128,,"Sep 02, 2025","Sep 05, 2025",,official,https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf
+QQQI,2026-05-20,0.658900,05/19/2026,05/20/2026,05/22/2026,,official,https://neosfunds.com/qqqi/
+QQQI,2026-04-22,0.629700,04/21/2026,04/22/2026,04/24/2026,,official,https://neosfunds.com/qqqi/
+QQQI,2026-03-18,0.608900,03/17/2026,03/18/2026,03/20/2026,,official,https://neosfunds.com/qqqi/
+QQQI,2026-02-18,0.614000,02/17/2026,02/18/2026,02/20/2026,,official,https://neosfunds.com/qqqi/
+QQQI,2026-01-21,0.635900,01/20/2026,01/21/2026,01/23/2026,,official,https://neosfunds.com/qqqi/
+QQQI,2025-12-24,0.641300,12/23/2025,12/24/2025,12/26/2025,,official,https://neosfunds.com/qqqi/
+QQQI,2025-11-26,0.630400,11/25/2025,11/26/2025,11/28/2025,,official,https://neosfunds.com/qqqi/
+QQQI,2025-10-22,0.644500,10/21/2025,10/22/2025,10/24/2025,,official,https://neosfunds.com/qqqi/
+QQQI,2025-09-24,0.641100,09/23/2025,09/24/2025,09/26/2025,,official,https://neosfunds.com/qqqi/
+QQQI,2025-08-20,0.628500,08/19/2025,08/20/2025,08/22/2025,,official,https://neosfunds.com/qqqi/
+QQQI,2025-07-23,0.636600,07/22/2025,07/23/2025,07/25/2025,,official,https://neosfunds.com/qqqi/
+QQQI,2025-06-25,0.628200,06/24/2025,06/25/2025,06/27/2025,,official,https://neosfunds.com/qqqi/
+QQQI,2025-05-21,0.637400,05/20/2025,05/21/2025,05/23/2025,,official,https://neosfunds.com/qqqi/
+QQQI,2025-04-23,0.530900,04/22/2025,04/23/2025,04/25/2025,,official,https://neosfunds.com/qqqi/
+QQQI,2025-03-26,0.586700,03/25/2025,03/26/2025,03/28/2025,,official,https://neosfunds.com/qqqi/
+QQQI,2025-02-26,0.613800,02/25/2025,02/26/2025,02/28/2025,,official,https://neosfunds.com/qqqi/
+QQQI,2025-01-22,0.624100,01/21/2025,01/22/2025,01/24/2025,,official,https://neosfunds.com/qqqi/
+QQQI,2024-12-24,0.621600,12/23/2024,12/24/2024,12/26/2024,,official,https://neosfunds.com/qqqi/
+QQQI,2024-11-20,0.611600,11/19/2024,11/20/2024,11/21/2024,,official,https://neosfunds.com/qqqi/
+QQQI,2024-10-23,0.609800,10/22/2024,10/23/2024,10/24/2024,,official,https://neosfunds.com/qqqi/
+QQQI,2024-09-25,0.602200,09/24/2024,09/25/2024,09/26/2024,,official,https://neosfunds.com/qqqi/
+QQQI,2024-08-21,0.644300,08/20/2024,08/21/2024,08/22/2024,,official,https://neosfunds.com/qqqi/
+QQQI,2024-07-24,0.618600,07/23/2024,07/24/2024,07/25/2024,,official,https://neosfunds.com/qqqi/
+QQQI,2024-06-26,0.623300,06/25/2024,06/26/2024,06/27/2024,,official,https://neosfunds.com/qqqi/
+QQQI,2024-05-23,0.612900,05/21/2024,05/22/2024,05/24/2024,,official,https://neosfunds.com/qqqi/
+QQQI,2024-04-25,0.586700,04/23/2024,04/24/2024,04/26/2024,,official,https://neosfunds.com/qqqi/
+QQQI,2024-03-21,0.604500,03/19/2024,03/20/2024,03/22/2024,,official,https://neosfunds.com/qqqi/
+QQQI,2024-02-22,0.593900,02/20/2024,02/21/2024,02/23/2024,,official,https://neosfunds.com/qqqi/
+NVDY,2026-06-11,0.119400,06/10/2026,06/11/2026,06/12/2026,57.93%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2026-06-04,0.131300,06/03/2026,06/04/2026,06/05/2026,0.00%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2026-05-28,0.124700,05/27/2026,05/28/2026,05/29/2026,0.00%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2026-05-21,0.135400,05/20/2026,05/21/2026,05/22/2026,95.34%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2026-05-14,0.150900,05/13/2026,05/14/2026,05/15/2026,0.00%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2026-05-07,0.128100,05/06/2026,05/07/2026,05/08/2026,0.00%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2026-04-30,0.207200,04/29/2026,04/30/2026,05/01/2026,97.05%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2026-04-23,0.140100,04/22/2026,04/23/2026,04/24/2026,95.18%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2026-04-16,0.116100,04/15/2026,04/16/2026,04/17/2026,94.05%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2026-04-09,0.111100,04/08/2026,04/09/2026,04/10/2026,93.62%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2026-04-02,0.114800,04/01/2026,04/02/2026,04/06/2026,3.91%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2026-03-26,0.119500,03/25/2026,03/26/2026,03/27/2026,0.00%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2026-03-19,0.133200,03/18/2026,03/19/2026,03/20/2026,94.67%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2026-03-12,0.119700,03/11/2026,03/12/2026,03/13/2026,0.06%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2026-03-05,0.116200,03/04/2026,03/05/2026,03/06/2026,0.00%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2026-02-26,0.115100,02/25/2026,02/26/2026,02/27/2026,0.00%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2026-02-19,0.094400,02/18/2026,02/19/2026,02/20/2026,92.62%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2026-02-12,0.105700,02/11/2026,02/12/2026,02/13/2026,2.53%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2026-02-05,0.093900,02/04/2026,02/05/2026,02/06/2026,92.80%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2026-01-29,0.107600,01/28/2026,01/29/2026,01/30/2026,0.00%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2026-01-22,0.084800,01/21/2026,01/22/2026,01/23/2026,72.87%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2026-01-15,0.095000,01/14/2026,01/15/2026,01/16/2026,87.38%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2026-01-08,0.105400,01/07/2026,01/08/2026,01/09/2026,21.81%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2026-01-02,0.143500,12/31/2025,01/02/2026,01/05/2026,94.92%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2025-12-26,0.115600,12/24/2025,12/26/2025,12/29/2025,62.02%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2025-12-18,0.117400,12/17/2025,12/18/2025,12/19/2025,9.78%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2025-12-11,0.149400,12/10/2025,12/11/2025,12/12/2025,66.26%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2025-12-04,0.164900,12/03/2025,12/04/2025,12/05/2025,16.58%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2025-11-28,0.163200,11/26/2025,11/28/2025,12/01/2025,5.30%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2025-11-20,0.149700,11/19/2025,11/20/2025,11/21/2025,95.21%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2025-11-13,0.143900,11/12/2025,11/13/2025,11/14/2025,0.00%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2025-11-06,0.318600,11/05/2025,11/06/2025,11/07/2025,98.96%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2025-10-30,0.182400,10/29/2025,10/30/2025,10/31/2025,21.24%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2025-10-23,0.120600,10/22/2025,10/23/2025,10/24/2025,0.00%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2025-10-16,0.109400,10/15/2025,10/16/2025,10/17/2025,0.00%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2025-10-09,0.795400,10/08/2025,10/09/2025,10/10/2025,95.96%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2025-09-11,0.642800,09/10/2025,09/11/2025,09/12/2025,8.26%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2025-08-14,0.839700,08/13/2025,08/14/2025,08/15/2025,0.00%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2025-07-17,1.028500,07/16/2025,07/17/2025,07/18/2025,37.15%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2025-06-20,0.672100,06/18/2025,06/20/2025,06/23/2025,95.30%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2025-05-22,1.627600,05/21/2025,05/22/2025,05/23/2025,97.93%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2025-04-24,0.673400,04/23/2025,04/24/2025,04/25/2025,85.30%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2025-03-27,0.787400,03/26/2025,03/27/2025,03/28/2025,nan%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2025-02-27,1.611800,02/26/2025,02/27/2025,02/28/2025,nan%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2025-01-30,0.829400,01/29/2025,01/30/2025,01/31/2025,nan%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2025-01-03,0.898300,01/02/2025,01/03/2025,01/06/2025,nan%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2024-12-05,1.185100,12/04/2024,12/05/2024,12/06/2024,nan%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2024-11-07,1.022800,11/06/2024,11/07/2024,11/08/2024,nan%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2024-10-10,1.099900,10/08/2024,10/10/2024,10/11/2024,nan%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2024-09-06,1.354800,09/05/2024,09/06/2024,09/09/2024,nan%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2024-08-07,1.251200,08/06/2024,08/07/2024,08/08/2024,nan%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2024-07-05,2.470700,07/03/2024,07/05/2024,07/08/2024,nan%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2024-06-06,2.563000,06/05/2024,06/06/2024,06/07/2024,nan%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2024-05-06,1.198800,05/03/2024,05/07/2024,05/08/2024,nan%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2024-04-04,2.608300,04/03/2024,04/05/2024,04/08/2024,nan%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2024-03-06,2.621900,03/05/2024,03/07/2024,03/08/2024,nan%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2024-02-07,1.530400,02/06/2024,02/08/2024,02/09/2024,nan%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2024-01-05,0.626000,01/04/2024,01/08/2024,01/09/2024,nan%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2023-12-07,0.507100,12/06/2023,12/08/2023,12/13/2023,nan%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2023-11-08,0.415000,11/07/2023,11/09/2023,11/16/2023,nan%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2023-10-06,0.677100,10/05/2023,10/10/2023,10/16/2023,nan%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2023-09-08,0.929700,09/07/2023,09/11/2023,09/18/2023,92.99%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2023-08-04,0.813600,08/03/2023,08/07/2023,08/14/2023,94.58%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2023-07-07,0.957400,07/06/2023,07/10/2023,07/17/2023,nan%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
+NVDY,2023-06-07,0.746300,06/06/2023,06/08/2023,06/15/2023,nan%,official,https://www.yieldmaxetfs.com/our-etfs/nvdy/
