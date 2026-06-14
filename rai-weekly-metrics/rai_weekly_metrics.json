@@ -15,8 +15,8 @@
         }
       },
       {
-        "name": "rAI Max",
-        "display_name": "rAI Max",
+        "name": "rAIX",
+        "display_name": "rAIX",
         "target_period": "ttm_or_common_available",
         "holdings": {
           "NVDY": 0.3,
@@ -120,8 +120,8 @@
       }
     },
     {
-      "name": "rAI Max",
-      "display_name": "rAI Max",
+      "name": "rAIX",
+      "display_name": "rAIX",
       "period_start": "2026-04-02",
       "period_end": "2026-06-12",
       "period_label": "common available since 2026-04-02",
