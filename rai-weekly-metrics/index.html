@@ -208,6 +208,13 @@
     const pct = v => `${(Number(v || 0) * 100).toFixed(1)}%`;
     const pct2 = v => `${(Number(v || 0) * 100).toFixed(2)}%`;
     const usd = v => `$${Number(v || 0).toFixed(4)}`;
+    const aum = v => {
+      const n = Number(v || 0);
+      if (n >= 1e12) return `$${(n / 1e12).toFixed(2)}T`;
+      if (n >= 1e9) return `$${(n / 1e9).toFixed(1)}B`;
+      if (n >= 1e6) return `$${(n / 1e6).toFixed(1)}M`;
+      return `$${n.toFixed(0)}`;
+    };
     const statusPill = s => `<span class="pill ${String(s).startsWith('official') ? '' : 'warn'}">${s}</span>`;
 
     async function loadCsv(path) {
@@ -267,9 +274,9 @@
         <table>
           <thead>
             <tr>
-              <th>Fund</th><th class="num">Weight</th><th class="num">Latest dist</th>
-              <th class="num">Current gross</th><th class="num">TTM dist/share</th>
-              <th class="num">TTM gross</th><th>Status</th>
+              <th>ETF</th><th class="num">比例</th><th class="num">ETF AUM</th>
+              <th class="num">当前分红率</th><th class="num">TTM 分红率</th>
+              <th class="num">税后总回报</th><th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -277,11 +284,11 @@
               <tr>
                 <td>${sym}</td>
                 <td class="num">${pct(f.weight)}</td>
-                <td class="num">${usd(f.latest_distribution_amount)}<br><span class="note">${f.latest_distribution_ex_date || '-'}</span></td>
+                <td class="num">${aum(f.aum)}<br><span class="note">${f.aum_as_of || 'latest'}</span></td>
                 <td class="num">${pct(f.current_run_rate_distribution_rate)}</td>
-                <td class="num">${usd(f.ttm_distribution_sum)}<br><span class="note">${f.ttm_distribution_count} records</span></td>
                 <td class="num">${pct(f.gross_ttm_distribution_rate)}</td>
-                <td>${(f.source_status || []).map(statusPill).join(' ')}</td>
+                <td class="num">${pct(f.taxed_total_return_before_product_fee)}</td>
+                <td>${(f.aum_source_status ? [f.aum_source_status] : []).concat(f.source_status || []).map(statusPill).join(' ')}</td>
               </tr>
             `).join('')}
           </tbody>
