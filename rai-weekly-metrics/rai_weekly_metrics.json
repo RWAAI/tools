@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-13T21:41:29",
+  "updated_at": "2026-06-15T08:15:03",
   "config": {
     "as_of_timezone": "Asia/Singapore",
     "withholding_tax_rate": 0.3,
@@ -51,11 +51,11 @@
         "distribution_frequency": "Quarterly",
         "official_distribution_url": "https://investor.vanguard.com/investment-products/etfs/profile/vgt",
         "price_source": "Yahoo Finance",
-        "distribution_fallback_source": "Yahoo Finance, used only if Vanguard page/API has no parseable distribution history",
+        "distribution_fallback_source": "Yahoo Finance, used only if Vanguard vmf/api distribution endpoint is unavailable",
         "aum_fallback": {
           "amount": 149000000000,
           "as_of": "2026-06-06",
-          "source_status": "fallback_kiplinger_after_official_page_without_parseable_aum"
+          "source_status": "fallback_kiplinger_if_vanguard_api_unavailable"
         }
       },
       "SGOV": {
@@ -73,10 +73,10 @@
       "period_start": "2025-06-12",
       "period_end": "2026-06-12",
       "period_label": "TTM",
-      "net_current_distribution_rate": 0.1446,
+      "net_current_distribution_rate": 0.14402434571291944,
       "net_distribution_rate": 0.16808249616227944,
       "net_total_return": 0.17043776259372478,
-      "gross_weighted_current_distribution_rate": 0.23514285714285715,
+      "gross_weighted_current_distribution_rate": 0.2343204938755992,
       "gross_weighted_ttm_distribution_rate": 0.26868928023182775,
       "funds": {
         "QQQI": {
@@ -100,7 +100,7 @@
         },
         "NVDY": {
           "weight": 0.25,
-          "aum": 1420000000.0,
+          "aum": 1430000000.0,
           "aum_as_of": "",
           "aum_source_status": "official",
           "latest_close": 12.899999618530273,
@@ -108,7 +108,7 @@
           "latest_distribution_ex_date": "2026-06-11",
           "current_distribution_amount": 0.1277,
           "current_distribution_sample_size": 4,
-          "current_run_rate_distribution_rate": 0.5180491582136244,
+          "current_run_rate_distribution_rate": 0.5147597051445926,
           "ttm_distribution_sum": 8.6267,
           "ttm_distribution_count": 40,
           "gross_ttm_distribution_rate": 0.6687364538839311,
@@ -125,15 +125,15 @@
       "period_start": "2026-04-02",
       "period_end": "2026-06-12",
       "period_label": "common available since 2026-04-02",
-      "net_current_distribution_rate": 0.1114571163767437,
-      "net_distribution_rate": 0.14204365712259073,
+      "net_current_distribution_rate": 0.11076621130762603,
+      "net_distribution_rate": 0.14204353719796972,
       "net_total_return": 0.37123574414199223,
-      "gross_weighted_current_distribution_rate": 0.1877958805382053,
-      "gross_weighted_ttm_distribution_rate": 0.23149093874655818,
+      "gross_weighted_current_distribution_rate": 0.1868088732966086,
+      "gross_weighted_ttm_distribution_rate": 0.231490767425671,
       "funds": {
         "NVDY": {
           "weight": 0.3,
-          "aum": 1420000000.0,
+          "aum": 1430000000.0,
           "aum_as_of": "",
           "aum_source_status": "official",
           "latest_close": 12.899999618530273,
@@ -141,7 +141,7 @@
           "latest_distribution_ex_date": "2026-06-11",
           "current_distribution_amount": 0.1277,
           "current_distribution_sample_size": 4,
-          "current_run_rate_distribution_rate": 0.5180491582136244,
+          "current_run_rate_distribution_rate": 0.5147597051445926,
           "ttm_distribution_sum": 8.6267,
           "ttm_distribution_count": 40,
           "gross_ttm_distribution_rate": 0.6687364538839311,
@@ -190,21 +190,21 @@
         },
         "VGT": {
           "weight": 0.2,
-          "aum": 149000000000,
-          "aum_as_of": "2026-06-06",
-          "aum_source_status": "fallback_kiplinger_after_official_page_without_parseable_aum",
+          "aum": 147300000000.0,
+          "aum_as_of": "2026-05-31",
+          "aum_source_status": "official",
           "latest_close": 116.73999786376953,
-          "latest_distribution_amount": 0.093,
+          "latest_distribution_amount": 0.092975,
           "latest_distribution_ex_date": "2026-03-24",
-          "current_distribution_amount": 0.093,
+          "current_distribution_amount": 0.092975,
           "current_distribution_sample_size": 1,
-          "current_run_rate_distribution_rate": 0.0031865685010043234,
-          "ttm_distribution_sum": 0.38287499999999997,
+          "current_run_rate_distribution_rate": 0.0031857118965685697,
+          "ttm_distribution_sum": 0.382775,
           "ttm_distribution_count": 4,
-          "gross_ttm_distribution_rate": 0.0032797242333925543,
+          "gross_ttm_distribution_rate": 0.0032788676289568007,
           "taxed_total_return_before_product_fee": 0.3104889509798592,
           "source_status": [
-            "fallback_yahoo_after_official_error: No parseable Vanguard distribution table found on current profile page"
+            "official_split_adjusted"
           ]
         },
         "SGOV": {
