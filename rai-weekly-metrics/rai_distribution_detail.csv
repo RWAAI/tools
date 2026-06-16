@@ -1,9 +1,10 @@
 symbol,ex_date,amount_per_share,declaration_date,record_date,payable_date,roc,source_status,source
-VGT,2026-03-24,0.093000,,,,,fallback_yahoo_after_official_error: No parseable Vanguard distribution table found on current profile page,https://finance.yahoo.com/
-VGT,2025-12-17,0.094625,,,,,fallback_yahoo_after_official_error: No parseable Vanguard distribution table found on current profile page,https://finance.yahoo.com/
-VGT,2025-09-24,0.107375,,,,,fallback_yahoo_after_official_error: No parseable Vanguard distribution table found on current profile page,https://finance.yahoo.com/
-VGT,2025-06-26,0.087875,,,,,fallback_yahoo_after_official_error: No parseable Vanguard distribution table found on current profile page,https://finance.yahoo.com/
-VGT,2025-03-25,0.091125,,,,,fallback_yahoo_after_official_error: No parseable Vanguard distribution table found on current profile page,https://finance.yahoo.com/
+VGT,2026-03-24,0.092975,,2026-03-24T00:00:00-04:00,2026-03-26T00:00:00-04:00,,official_split_adjusted,https://investor.vanguard.com/vmf/api/VGT/distribution
+VGT,2025-12-17,0.094625,,2025-12-17T00:00:00-05:00,2025-12-19T00:00:00-05:00,,official_split_adjusted,https://investor.vanguard.com/vmf/api/VGT/distribution
+VGT,2025-09-24,0.107325,,2025-09-24T00:00:00-04:00,2025-09-26T00:00:00-04:00,,official_split_adjusted,https://investor.vanguard.com/vmf/api/VGT/distribution
+VGT,2025-06-26,0.087850,,2025-06-26T00:00:00-04:00,2025-06-30T00:00:00-04:00,,official_split_adjusted,https://investor.vanguard.com/vmf/api/VGT/distribution
+VGT,2025-03-25,0.091175,,2025-03-25T00:00:00-04:00,2025-03-27T00:00:00-04:00,,official_split_adjusted,https://investor.vanguard.com/vmf/api/VGT/distribution
+VGT,2024-12-18,0.097075,,2024-12-18T00:00:00-05:00,2024-12-20T00:00:00-05:00,,official_split_adjusted,https://investor.vanguard.com/vmf/api/VGT/distribution
 SGOV,2026-06-01,0.299492,,"Jun 01, 2026","Jun 04, 2026",,official,https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf
 SGOV,2026-05-01,0.297920,,"May 01, 2026","May 06, 2026",,official,https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf
 SGOV,2026-04-01,0.292689,,"Apr 01, 2026","Apr 07, 2026",,official,https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf
