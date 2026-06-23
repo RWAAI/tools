@@ -188,7 +188,7 @@
 
     <div class="section">
       <h2>底层 ETF 输入</h2>
-      <div class="note">Current = 月派基金用最新一次实际分配年化；周派基金用最近 4 次实际分配均值 × 52 年化；TTM = 过去 12 个月实际分配合计。</div>
+      <div class="note">Current = 月派基金用最新一次实际分配年化；周派基金用最近 4 次实际分配均值 × 52 年化；TTM = 过去 12 个月实际分配合计。rAIX 中 DRAM 使用 2026-04-02 成立以来表现（非完整 TTM）。</div>
       <div id="fundTables"></div>
     </div>
 
@@ -253,13 +253,13 @@
               <small>过去 12 个月实际分配</small>
             </div>
             <div class="metric">
-              <label>净总回报</label>
+              <label>${r.name === 'rAIX' ? 'Pro-forma 净总回报' : '净总回报'}</label>
               <strong>${pct(r.net_total_return)}</strong>
-              <small>${r.period_start} 至 ${r.period_end}</small>
+              <small>${r.name === 'rAIX' ? 'DRAM 2026-04-02 成立以来（非完整 TTM）' : `${r.period_start} 至 ${r.period_end}`}</small>
             </div>
           </div>
           <table>
-            <tr><th>Period</th><td>${r.period_label}</td></tr>
+            <tr><th>Period</th><td>${r.name === 'rAIX' ? 'Pro-forma TTM；DRAM 2026-04-02 成立以来（非完整 TTM）' : r.period_label}</td></tr>
             <tr><th>Gross current distribution</th><td>${pct(r.gross_weighted_current_distribution_rate)}</td></tr>
             <tr><th>Gross TTM distribution</th><td>${pct(r.gross_weighted_ttm_distribution_rate)}</td></tr>
           </table>
@@ -287,7 +287,7 @@
                 <td class="num">${aum(f.aum)}<br><span class="note">${f.aum_as_of || 'latest'}</span></td>
                 <td class="num">${pct(f.current_run_rate_distribution_rate)}</td>
                 <td class="num">${pct(f.gross_ttm_distribution_rate)}</td>
-                <td class="num">${pct(f.taxed_total_return_before_product_fee)}</td>
+                <td class="num">${pct(f.taxed_total_return_before_product_fee)}${sym === 'DRAM' ? '<br><span class="note">2026-04-02 成立以来（非完整 TTM）</span>' : ''}</td>
                 <td>${(f.aum_source_status ? [f.aum_source_status] : []).concat(f.source_status || []).map(statusPill).join(' ')}</td>
               </tr>
             `).join('')}

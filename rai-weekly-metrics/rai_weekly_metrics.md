@@ -9,7 +9,9 @@ Tax/fee: 30% WHT on distributions, 2% annual product management fee.
 | Product | Period | Net distribution rate | Net total return |
 |---|---:|---:|---:|
 | rAI | 2025-06-12 to 2026-06-12 (TTM) | 14.4% current / 16.8% TTM | 17.0% |
-| rAIX | 2026-04-02 to 2026-06-12 (common available since 2026-04-02) | 11.1% current / 14.2% TTM | 37.1% |
+| rAIX | Pro-forma TTM; DRAM since 2026-04-02 inception (non-TTM) | 11.1% current / 14.2% TTM | 37.1% |
+
+> Note: rAIX mixes true TTM components with DRAM, which does not yet have a full 12-month record. DRAM return is therefore shown from 2026-04-02 inception and rAIX total return is labelled Pro-forma.
 
 ## Fund Inputs
 
@@ -26,7 +28,7 @@ Tax/fee: 30% WHT on distributions, 2% annual product management fee.
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---|
 | NVDY | 30% | $1.4B | $0.1194 (2026-06-11) | $0.1277 (4 obs) | 51.5% | $8.6267 | 66.9% | 6.2% | official |
 | QQQI | 20% | $12.5B | $0.6589 (2026-05-20) | $0.6589 (1 obs) | 14.1% | $7.5980 | 13.5% | 13.5% | official |
-| DRAM | 20% | $17.5B | $0.0000 () | $0.0000 (0 obs) | 0.0% | $0.0000 | 0.0% | 134.2% | official_no_distributions |
+| DRAM | 20% | $17.5B | $0.0000 () | $0.0000 (0 obs) | 0.0% | $0.0000 | 0.0% | 134.2% (2026-04-02 inception; non-TTM) | official_no_distributions; since_2026-04-02_non_ttm |
 | VGT | 20% | $147.3B | $0.0930 (2026-03-24) | $0.0930 (1 obs) | 0.3% | $0.3828 | 0.3% | 31.0% | official_split_adjusted |
 | SGOV | 10% | $95.2B | $0.2995 (2026-06-01) | $0.2995 (1 obs) | 3.6% | $3.1621 | 3.1% | 0.5% | official |
 

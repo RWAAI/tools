@@ -124,7 +124,7 @@
       "display_name": "rAIX",
       "period_start": "2026-04-02",
       "period_end": "2026-06-12",
-      "period_label": "common available since 2026-04-02",
+      "period_label": "Pro-forma TTM; DRAM since 2026-04-02 (non-TTM)",
       "net_current_distribution_rate": 0.11076621130762603,
       "net_distribution_rate": 0.14204353719796972,
       "net_total_return": 0.37123574414199223,
@@ -185,8 +185,10 @@
           "gross_ttm_distribution_rate": 0.0,
           "taxed_total_return_before_product_fee": 1.341858847270227,
           "source_status": [
-            "official_no_distributions"
-          ]
+            "official_no_distributions",
+            "since_2026-04-02_non_ttm"
+          ],
+          "return_period_label": "since 2026-04-02 inception (non-TTM)"
         },
         "VGT": {
           "weight": 0.2,
@@ -226,7 +228,8 @@
             "official"
           ]
         }
-      }
+      },
+      "dram_caveat": "DRAM return uses since-inception performance from 2026-04-02; not a full TTM record."
     }
   ]
 }
