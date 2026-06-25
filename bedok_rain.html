@@ -213,7 +213,7 @@ const $=id=>document.getElementById(id);
 /* ---- date helpers (browser runs in SGT for the user) ---- */
 const pad=n=>String(n).padStart(2,"0");
 function ymd(d){return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());}
-(function initDate(){ $("date").value=ymd(new Date()); })();
+(function initDate(){ const t=new Date(); t.setDate(t.getDate()+1); $("date").value=ymd(t); })();
 
 /* ---- preset chips ---- */
 $("dayChips").addEventListener("click",e=>{
