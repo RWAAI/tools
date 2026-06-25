@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Bedok 降雨概率</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B1620;        /* deep storm ink */
+    --panel:#11212E;      /* panel */
+    --panel-2:#152A39;    /* raised panel */
+    --line:#244154;       /* hairlines */
+    --text:#E8F1F6;       /* primary text */
+    --muted:#8FA9BA;      /* muted */
+    --faint:#5E7A8C;      /* faintest labels */
+    --sun:#F4B740;        /* clear / low-risk affirmation */
+    --calm:#4FD1C5;
+    --sky:#38BDF8;
+    --blue:#3B82F6;
+    --indigo:#6366F1;
+    --storm:#8B5CF6;
+    --danger:#F472B6;
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--ink);color:var(--text);
+    font-family:"Noto Sans SC","Space Grotesk",system-ui,-apple-system,sans-serif;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  body{min-height:100dvh;background:
+    radial-gradient(120% 80% at 80% -10%, #16323f 0%, rgba(22,50,63,0) 55%),
+    radial-gradient(100% 70% at -10% 110%, #16242f 0%, rgba(11,22,32,0) 50%),
+    var(--ink);}
+  .wrap{max-width:560px;margin:0 auto;padding:28px 20px 60px;}
+
+  /* Header */
+  .eyebrow{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--faint);display:flex;align-items:center;gap:10px;}
+  .eyebrow::after{content:"";flex:1;height:1px;background:var(--line);}
+  h1{font-family:"Space Grotesk",sans-serif;font-weight:700;letter-spacing:-.01em;
+    font-size:34px;line-height:1.05;margin:14px 0 4px;}
+  h1 .zh{font-family:"Noto Sans SC",sans-serif;font-weight:700;}
+  .sub{color:var(--muted);font-size:14px;margin:0 0 22px;line-height:1.5;}
+
+  /* Controls */
+  .panel{background:linear-gradient(180deg,var(--panel-2),var(--panel));
+    border:1px solid var(--line);border-radius:var(--radius);padding:18px;}
+  .field{margin-bottom:14px;}
+  .field:last-child{margin-bottom:0;}
+  label{display:block;font-family:"Space Mono",monospace;font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 8px;}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px;}
+  .chip{background:transparent;border:1px solid var(--line);color:var(--muted);
+    font-family:"Noto Sans SC",sans-serif;font-size:13px;padding:7px 13px;border-radius:999px;
+    cursor:pointer;transition:.15s;}
+  .chip:hover{border-color:var(--sky);color:var(--text);}
+  .chip.on{background:var(--sky);border-color:var(--sky);color:#04222f;font-weight:500;}
+  .row{display:flex;gap:12px;}
+  .row .field{flex:1;}
+  input[type=date],input[type=time]{width:100%;background:var(--ink);color:var(--text);
+    border:1px solid var(--line);border-radius:10px;padding:12px 12px;font-size:16px;
+    font-family:"Space Mono",monospace;appearance:none;}
+  input::-webkit-calendar-picker-indicator{filter:invert(.7);}
+  input:focus-visible{outline:2px solid var(--sky);outline-offset:1px;border-color:var(--sky);}
+  .go{width:100%;margin-top:16px;background:var(--sky);color:#04222f;border:0;border-radius:12px;
+    padding:15px;font-size:16px;font-weight:700;font-family:"Noto Sans SC",sans-serif;cursor:pointer;
+    letter-spacing:.02em;transition:.15s;}
+  .go:hover{filter:brightness(1.06);}
+  .go:active{transform:translateY(1px);}
+  .go:disabled{opacity:.5;cursor:default;}
+  .go:focus-visible{outline:2px solid var(--text);outline-offset:2px;}
+
+  /* Result */
+  .result{margin-top:22px;display:none;}
+  .result.show{display:block;animation:rise .4s ease both;}
+  @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+  .gaugewrap{display:flex;gap:20px;align-items:stretch;}
+  /* Rain column gauge — the signature element */
+  .gauge{position:relative;width:84px;flex:0 0 84px;border:1px solid var(--line);
+    border-radius:18px;overflow:hidden;background:rgba(4,18,26,.6);min-height:200px;}
+  .fill{position:absolute;left:0;right:0;bottom:0;height:0%;
+    background:linear-gradient(180deg,var(--lvl,var(--blue)),color-mix(in srgb,var(--lvl,var(--blue)) 55%, #04121a));
+    transition:height 1s cubic-bezier(.22,1,.36,1);}
+  .fill::before{content:"";position:absolute;top:-9px;left:-25%;width:150%;height:18px;
+    border-radius:50%;background:var(--lvl,var(--blue));opacity:.9;
+    animation:wave 4s ease-in-out infinite;}
+  @keyframes wave{0%,100%{transform:translateX(-6px) scaleY(1)}50%{transform:translateX(6px) scaleY(.7)}}
+  .gauge .ticks{position:absolute;inset:0;pointer-events:none;}
+  .gauge .ticks i{position:absolute;left:0;width:8px;height:1px;background:var(--line);}
+  .gauge .ticks i:nth-child(1){top:25%}.gauge .ticks i:nth-child(2){top:50%}.gauge .ticks i:nth-child(3){top:75%}
+  .rain{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .6s;}
+  .rain span{position:absolute;top:-12%;width:1px;height:14px;background:linear-gradient(var(--text),transparent);
+    opacity:.5;animation:drop linear infinite;}
+  @keyframes drop{to{transform:translateY(260px)}}
+
+  .readout{flex:1;display:flex;flex-direction:column;justify-content:center;}
+  .pct{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:64px;line-height:.9;
+    letter-spacing:-.03em;}
+  .pct small{font-size:26px;font-weight:500;color:var(--muted);margin-left:2px;}
+  .band{display:inline-flex;align-items:center;gap:8px;margin-top:8px;font-size:15px;font-weight:500;}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--lvl,var(--blue));}
+  .window{color:var(--muted);font-size:13px;font-family:"Space Mono",monospace;margin-top:10px;}
+
+  .saying{margin-top:18px;padding:14px 16px;border-radius:12px;background:var(--ink);
+    border:1px solid var(--line);font-size:14.5px;line-height:1.6;}
+  .saying b{color:var(--text);font-weight:700;}
+
+  .meta{margin-top:14px;border-top:1px dashed var(--line);padding-top:14px;
+    display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13px;}
+  .meta dt{color:var(--faint);font-family:"Space Mono",monospace;font-size:11px;
+    letter-spacing:.08em;text-transform:uppercase;align-self:center;}
+  .meta dd{margin:0;color:var(--text);}
+  .meta .src{color:var(--calm);}
+
+  .note{margin-top:22px;font-size:12.5px;color:var(--faint);line-height:1.6;}
+  .note a{color:var(--sky);text-decoration:none;border-bottom:1px solid var(--line);}
+  .foot{margin-top:18px;display:flex;gap:14px;flex-wrap:wrap;}
+  .foot a{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--line);
+    padding:9px 14px;border-radius:10px;transition:.15s;}
+  .foot a:hover{border-color:var(--sky);color:var(--text);}
+
+  .status{margin-top:18px;font-size:14px;color:var(--muted);display:none;}
+  .status.show{display:block;}
+  .status.err{color:var(--danger);}
+  .spin{display:inline-block;width:13px;height:13px;border:2px solid var(--line);
+    border-top-color:var(--sky);border-radius:50%;animation:sp .7s linear infinite;vertical-align:-2px;margin-right:7px;}
+  @keyframes sp{to{transform:rotate(360deg)}}
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation-duration:.001ms !important;animation-iteration-count:1 !important;
+      transition-duration:.001ms !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Bedok · 新加坡东部 · NEA / MSS</div>
+  <h1><span class="zh">降雨概率</span></h1>
+  <p class="sub">选一个日期和时段,基于新加坡气象署的实时官方预报,估算 Bedok 该时段的降雨概率。</p>
+
+  <div class="panel">
+    <div class="chips" id="dayChips">
+      <button class="chip" data-day="0">今天</button>
+      <button class="chip" data-day="1">明天</button>
+      <button class="chip" data-day="2">后天</button>
+      <button class="chip" data-day="3">大后天</button>
+    </div>
+    <div class="field">
+      <label for="date">日期</label>
+      <input type="date" id="date" />
+    </div>
+    <div class="row">
+      <div class="field">
+        <label for="start">开始</label>
+        <input type="time" id="start" value="08:00" step="3600" />
+      </div>
+      <div class="field">
+        <label for="end">结束</label>
+        <input type="time" id="end" value="10:00" step="3600" />
+      </div>
+    </div>
+    <div class="chips" id="timeChips" style="margin-top:14px;margin-bottom:0;">
+      <button class="chip" data-s="08:00" data-e="10:00">8–10am</button>
+      <button class="chip" data-s="08:00" data-e="12:00">8–12</button>
+      <button class="chip" data-s="12:00" data-e="14:00">午间</button>
+      <button class="chip" data-s="18:00" data-e="20:00">傍晚</button>
+    </div>
+    <button class="go" id="go">查询降雨概率</button>
+  </div>
+
+  <div class="status" id="status"></div>
+
+  <div class="result" id="result">
+    <div class="panel">
+      <div class="gaugewrap">
+        <div class="gauge">
+          <div class="ticks"><i></i><i></i><i></i></div>
+          <div class="rain" id="rain"></div>
+          <div class="fill" id="fill"></div>
+        </div>
+        <div class="readout">
+          <div class="pct"><span id="pctNum">–</span><small>%</small></div>
+          <div class="band"><span class="dot"></span><span id="bandTxt">–</span></div>
+          <div class="window" id="windowTxt"></div>
+        </div>
+      </div>
+
+      <div class="saying" id="saying"></div>
+
+      <dl class="meta">
+        <dt>官方预报</dt><dd id="mForecast">–</dd>
+        <dt>数据来源</dt><dd class="src" id="mSource">–</dd>
+        <dt>更新于</dt><dd id="mUpdated">–</dd>
+        <dt id="extraK" style="display:none">温度 / 风</dt><dd id="extraV" style="display:none"></dd>
+      </dl>
+    </div>
+
+    <p class="note">NEA 只发布文字预报,不发布精确百分比。上面的概率是把官方措辞映射成的估计区间,真正下不下以雨达图为准。提前量越大(2–4 天)越会调整。</p>
+    <div class="foot">
+      <a href="https://www.weather.gov.sg/weather-rain-area-50km" target="_blank" rel="noopener">雨达图 Rain Radar ↗</a>
+      <a href="https://www.weather.gov.sg/weather-forecast-2hrnowcast/" target="_blank" rel="noopener">2小时临近预报 ↗</a>
+    </div>
+  </div>
+</div>
+
+<script>
+const V1="https://api.data.gov.sg/v1/environment/";
+const $=id=>document.getElementById(id);
+
+/* ---- date helpers (browser runs in SGT for the user) ---- */
+const pad=n=>String(n).padStart(2,"0");
+function ymd(d){return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());}
+(function initDate(){ $("date").value=ymd(new Date()); })();
+
+/* ---- preset chips ---- */
+$("dayChips").addEventListener("click",e=>{
+  const b=e.target.closest(".chip"); if(!b)return;
+  const d=new Date(); d.setDate(d.getDate()+Number(b.dataset.day));
+  $("date").value=ymd(d);
+  [...$("dayChips").children].forEach(c=>c.classList.remove("on"));
+  b.classList.add("on");
+});
+$("timeChips").addEventListener("click",e=>{
+  const b=e.target.closest(".chip"); if(!b)return;
+  $("start").value=b.dataset.s; $("end").value=b.dataset.e;
+  [...$("timeChips").children].forEach(c=>c.classList.remove("on"));
+  b.classList.add("on");
+});
+
+/* ---- forecast text -> estimated probability ---- */
+function mapProb(textRaw){
+  const t=(textRaw||"").toLowerCase();
+  const rules=[
+    [/heavy thundery/, 85],
+    [/thundery/, 65],
+    [/heavy (rain|showers)/, 80],
+    [/moderate rain/, 70],
+    [/passing showers|light showers/, 40],
+    [/\bshowers?\b/, 50],
+    [/light rain/, 55],
+    [/\brain\b/, 65],
+    [/windy|strong wind/, 22],
+    [/partly cloudy/, 18],
+    [/cloudy|overcast/, 25],
+    [/hazy|haze|mist|fog/, 12],
+    [/fair|sunny|clear|warm/, 8],
+  ];
+  for(const [re,p] of rules) if(re.test(t)) return p;
+  return 30; // unknown wording
+}
+function band(p){
+  if(p<20) return ["低", "var(--calm)"];
+  if(p<40) return ["中等偏低","var(--sky)"];
+  if(p<60) return ["中等","var(--blue)"];
+  if(p<80) return ["偏高","var(--indigo)"];
+  return ["高","var(--storm)"];
+}
+
+/* ---- day-part reasoning (only used to refine multi-hour day summaries) ---- */
+function rainyBands(t){ // returns array of [startHour,endHour] mentioned in text
+  t=t.toLowerCase(); const b=[];
+  if(/pre-?dawn|early hours|predawn/.test(t)) b.push([0,8]);
+  if(/late morning/.test(t)) b.push([10,13]);
+  else if(/\bmorning\b/.test(t)) b.push([6,12]);
+  if(/afternoon/.test(t)) b.push([12,18]);
+  if(/evening/.test(t)) b.push([17,20]);
+  if(/\bnight\b/.test(t)) b.push([19,24]);
+  return b;
+}
+function overlaps(a,b){return a[0]<b[1] && b[0]<a[1];}
+
+/* ---- fetch json: direct first, then CORS-proxy fallbacks ---- */
+async function tryFetch(u){
+  const ctl=new AbortController(); const id=setTimeout(()=>ctl.abort(),9000);
+  try{ const r=await fetch(u,{signal:ctl.signal});
+    if(!r.ok) throw new Error("HTTP "+r.status); return await r.json(); }
+  finally{ clearTimeout(id); }
+}
+async function getJSON(path){
+  const url=V1+path;
+  const tries=[url,
+    "https://corsproxy.io/?url="+encodeURIComponent(url),
+    "https://api.allorigins.win/raw?url="+encodeURIComponent(url)];
+  let err;
+  for(const u of tries){ try{ return await tryFetch(u); }catch(e){ err=e; } }
+  throw err||new Error("fetch failed");
+}
+const fcText=f=> typeof f==="string" ? f : (f && (f.text||f.summary)) || "";
+
+/* ---- core: pick the right NEA source for the window ---- */
+async function lookup(dateStr,sH,eH){
+  const now=new Date();
+  const start=new Date(dateStr+"T"+pad(sH)+":00:00");
+  const end=new Date(dateStr+"T"+pad(eH)+":00:00");
+  const leadH=(start-now)/36e5;            // hours from now to window start
+
+  // 1) within next ~2h  -> Bedok-specific 2-hour nowcast
+  if(leadH<2 && end>now){
+    const j=await getJSON("2-hour-weather-forecast");
+    const items=j?.items||[];
+    const it=items[items.length-1]||items[0];
+    let txt="";
+    (it?.forecasts||[]).forEach(f=>{ if((f.area||"").toLowerCase()==="bedok") txt=fcText(f.forecast); });
+    if(txt) return {prob:mapProb(txt),forecast:txt,
+      source:"2 小时临近预报 · Bedok",
+      updated:it?.update_timestamp};
+  }
+
+  // 2) today / next ~24h -> 24-hour forecast, East region, matched period
+  if(leadH<34){
+    const j=await getJSON("24-hour-weather-forecast");
+    const it=(j?.items||[])[0]||{};
+    const periods=it.periods||[];
+    let best=null,bestOv=0;                 // require real overlap (>0)
+    periods.forEach(p=>{
+      const ps=new Date(p.time?.start||p.timePeriod?.start);
+      const pe=new Date(p.time?.end||p.timePeriod?.end);
+      if(isNaN(ps)||isNaN(pe))return;
+      const ov=Math.min(end,pe)-Math.max(start,ps);
+      if(ov>bestOv){bestOv=ov;best=p;}
+    });
+    if(best){
+      const reg=best.regions||{};
+      const txt=fcText(reg.east);
+      const g=it.general||{};
+      const temp=g.temperature?(g.temperature.low+"–"+g.temperature.high+"°C"):"";
+      const wind=g.wind?((g.wind.direction||"")+" "+(g.wind.speed?g.wind.speed.low+"–"+g.wind.speed.high+" km/h":"")):"";
+      const pt=best.time||best.timePeriod||{};
+      const ptxt=pt.start?(new Date(pt.start).getHours()+"–"+new Date(pt.end).getHours()+" 时"):"";
+      return {prob:mapProb(txt),forecast:txt,
+        source:"24 小时预报 · 东部 "+ptxt,
+        updated:it.update_timestamp,
+        extra:[temp,wind].filter(Boolean).join("  ·  ")};
+    }
+  }
+
+  // 3) 2–4 days out -> 4-day outlook (day summary), refined by day-part
+  const j=await getJSON("4-day-weather-forecast");
+  const it=(j?.items||[])[0]||{};
+  const days=it.forecasts||[];
+  let day=null;
+  days.forEach(d=>{ const ds=(d.date||d.timestamp||"").slice(0,10); if(ds===dateStr) day=d; });
+  if(!day) throw new Error("OUT_OF_RANGE");
+  const txt=fcText(day.forecast);
+  let prob=mapProb(txt);
+  // refine: if wording names parts of day and the window misses them, lower it
+  const bands=rainyBands(txt); let refineNote="";
+  if(bands.length){
+    const hit=bands.some(b=>overlaps([sH,eH],b));
+    if(!hit){ prob=Math.round(prob*0.35); refineNote="(雨段不在你选的时段,已下调)"; }
+  }
+  const temp=day.temperature?(day.temperature.low+"–"+day.temperature.high+"°C"):"";
+  const wind=day.wind?((day.wind.direction||"")+" "+(day.wind.speed?day.wind.speed.low+"–"+day.wind.speed.high+" km/h":"")):"";
+  return {prob,forecast:txt+(refineNote?"  "+refineNote:""),
+    source:"4 天展望 · "+(day.date||dateStr).slice(0,10),
+    updated:it.update_timestamp,
+    extra:[temp,wind].filter(Boolean).join("  ·  ")};
+}
+
+/* ---- saying / guidance copy ---- */
+function saying(p){
+  if(p<20) return "<b>基本干爽。</b>带不带伞都行,出门没问题。";
+  if(p<40) return "<b>大概率不下。</b>有零星短阵雨可能,放把折伞更安心。";
+  if(p<60) return "<b>一半一半。</b>建议带伞,留意出门前的雨达图。";
+  if(p<80) return "<b>偏湿。</b>大概率会遇到雷阵雨,雨具备好、避开露天行程。";
+  return "<b>大概率有雷阵雨。</b>尽量改室内或避开这个时段,注意雷电。";
+}
+
+/* ---- render ---- */
+function fmtTime(s){ if(!s)return"–"; const d=new Date(s); if(isNaN(d))return s;
+  return d.toLocaleString("zh-SG",{month:"short",day:"numeric",hour:"2-digit",minute:"2-digit",hour12:true}); }
+
+function render(r,sH,eH){
+  const p=Math.max(0,Math.min(100,Math.round(r.prob)));
+  const [lbl,col]=band(p);
+  document.documentElement.style.setProperty("--lvl",col);
+  $("pctNum").textContent=p;
+  $("bandTxt").textContent=lbl+"风险";
+  $("windowTxt").textContent=pad(sH)+":00 – "+pad(eH)+":00";
+  $("fill").style.height=p+"%";
+  $("saying").innerHTML=saying(p);
+  $("mForecast").textContent=r.forecast||"–";
+  $("mSource").textContent=r.source||"–";
+  $("mUpdated").textContent=fmtTime(r.updated);
+  if(r.extra){ $("extraK").style.display=""; $("extraV").style.display=""; $("extraV").textContent=r.extra; }
+  else { $("extraK").style.display="none"; $("extraV").style.display="none"; }
+  // rain animation when wet
+  const rainEl=$("rain"); rainEl.innerHTML="";
+  const wants = p>=45 && !matchMedia("(prefers-reduced-motion:reduce)").matches;
+  if(wants){
+    for(let i=0;i<14;i++){const s=document.createElement("span");
+      s.style.left=(Math.random()*100)+"%";
+      s.style.animationDuration=(0.5+Math.random()*0.5)+"s";
+      s.style.animationDelay=(Math.random()*1)+"s";
+      rainEl.appendChild(s);}
+    rainEl.style.opacity=Math.min(0.8,(p-30)/70).toFixed(2);
+  } else rainEl.style.opacity=0;
+  $("result").classList.add("show");
+}
+
+/* ---- run ---- */
+async function run(){
+  const dateStr=$("date").value;
+  let sH=parseInt($("start").value.split(":")[0],10);
+  let eH=parseInt($("end").value.split(":")[0],10);
+  if(!dateStr){ return fail("先选个日期。"); }
+  if(isNaN(sH)||isNaN(eH)){ return fail("时间段没填好。"); }
+  if(eH<=sH) eH=sH+1;
+
+  const st=$("status"); st.className="status show"; st.innerHTML='<span class="spin"></span>正在拉取 NEA 实时预报…';
+  $("go").disabled=true; $("result").classList.remove("show");
+  try{
+    const r=await lookup(dateStr,sH,eH);
+    st.className="status"; st.textContent="";
+    render(r,sH,eH);
+    $("result").scrollIntoView({behavior:"smooth",block:"nearest"});
+  }catch(err){
+    if(String(err.message).includes("OUT_OF_RANGE")){
+      fail("这个日期超出了预报范围(最多到 4 天后)。换近一点的日期再试。");
+    }else{
+      fail("拿不到数据。如果你现在是在对话的预览窗口里打开的,那是沙箱,会拦掉对外部网站的请求——请把文件下载到本地,用 Safari / Chrome 打开再试。仍失败多半是网络限制,可直接看 weather.gov.sg 的雨达图。");
+    }
+  }finally{ $("go").disabled=false; }
+}
+function fail(msg){ const st=$("status"); st.className="status show err"; st.textContent=msg; }
+
+$("go").addEventListener("click",run);
+</script>
+</body>
+</html>
